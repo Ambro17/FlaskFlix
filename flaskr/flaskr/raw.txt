@@ -1,0 +1,16 @@
+    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+      <img class="w3-image header-top-margin" src={{ url_for('static', filename='images/darkvader.jpg') }} alt="Architecture" width="1500" height="800">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 movie-description">
+            <span class="title w3-padding w3-black w3-opacity-min"> Star Wars </span>
+            <p class="synopsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              agaeg
+            </p>
+            <p class="trailer">Watch trailer</p>
+            <div>
+              <div class="col-sm-8 movie-trailer">
+                <p>hola</p>
+              </div>
+            </div>
+    </header>

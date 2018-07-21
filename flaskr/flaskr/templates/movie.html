@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <title>FlaskFlix</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet"  href="{{ url_for('static',filename='styles/basestyle.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/style2.css') }}">
+  <body>
+    <!-- Navbar (sit on top) -->
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#"><b>Bx</b></a>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/#projects">Peliculas</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/#contact">Pedidos</a>
+          </li>
+        </ul>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="text" placeholder="Buscar Película" />
+          <button class="btn btn-outline-info my-2 my-sm-0">Buscar</button>
+        </form>
+      </div>
+    </nav>
+    <div class="background">
+      <div class="container-fluid movie-details" style="background-image: url(https://image.tmdb.org/t/p/w1280/{{movie['poster']}})">
+        <div class="row">
+          <div class="col-sm-6 padded-text movie-desc">
+            <h1 class="movie-title"><span>  {{   movie['title']   }}  </span></h1>
+            <p class="movie-synopsis">{{movie.overview}} -- POSTER</p>
+              <span><a href={{movie.imdb_link}} target="_blank">
+                <img src={{ url_for('static', filename='images/imdbmini.png') }} class="float-left" alt="imdb">
+              </a></span>
+              <span>
+              <a href={{movie.magnet_link}}>
+                <img src={{ url_for('static', filename='images/magnet.png') }} class="float-right" alt="magnet">
+              </a>
+              </span>
+          </div>
+          <div class="col-sm-6 padded-text movie-trailer">
+            <div class="trailer embed-responsive embed-responsive-1by1">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{movie.yt_trailer}}" allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

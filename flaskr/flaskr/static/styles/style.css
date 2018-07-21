@@ -1,0 +1,56 @@
+.movie-tile {
+	opacity: 0.7
+}
+.movie-tile:hover {
+	opacity: 1
+}
+.movie-tile-bottom-links{
+	bottom: 0;
+    position: absolute;
+	height: 10%;
+}
+.movie-tile-bottom-links img {
+    height: 48px;
+	height: -webkit-fill-available;
+	opacity: 0.7;
+}
+.movie-tile-bottom-links img:hover {
+	opacity: 1;
+}
+.header-title {
+    color: white;
+    padding-bottom:0;
+}
+.background-wrapper{
+    background-color: #141414;
+}
+.movie-tile-title{
+    pointer-events:none
+}
+.contenido {
+    content: "";
+    display: table;
+    clear: both
+}
+.movie-desc {
+    background-color:red
+}
+.movie-right-space {
+    background-color:blue
+}
+
+/* Movie relevant css*/
+.movie-description {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+}
+.movie-description .title {
+    color: white;
+    font-size: 6vh;
+}
+.movie-description p {
+    margin-top: 2vh;
+    color: white;
+    font-size: 3vh;
+}

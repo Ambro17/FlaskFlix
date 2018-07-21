@@ -1,0 +1,80 @@
+.movie-tile {
+	opacity: 0.7
+}
+.movie-tile:hover {
+	opacity: 1
+}
+.movie-tile-bottom-links{
+	bottom: 0;
+    position: absolute;
+	height: 2em;
+}
+.movie-tile-bottom-links img {
+	height: -webkit-fill-available;
+	opacity: 0.7;
+}
+.movie-tile-bottom-links img:hover {
+	opacity: 1;
+}
+.header-title {
+    color: white;
+    padding-bottom:0;
+}
+.background-wrapper{
+    background-color: #141414;
+}
+.movie-tile-title{
+    pointer-events:none
+}
+.contenido {
+    content: "";
+    display: table;
+    clear: both
+}
+.movie-right-space {
+    background-color:blue
+}
+
+/* Movie relevant css*/
+.topbar {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    content: "";
+    display: table;
+    clear: both;
+}
+.movie-details {
+    background: url('darkvader.jpg');
+    background-size: cover;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+}
+.padded-text {
+    margin-top: 3em;
+}
+.movie-title {
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+}
+.movie-title span {
+    background-color: #292b2c;
+}
+.movie-synopsis {
+    margin-top: 2em;
+    font-size: 1.5em;
+    color: white;
+    line-height: 1.618em;
+    margin-bottom: 1.618em;
+}
+.movie-trailer {
+    color: white;
+}
+.trailer {
+    margin-top: 1em;
+}

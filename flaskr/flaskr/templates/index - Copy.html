@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"  href="{{ url_for('static',filename='styles/basestyle.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>BX</b> BitFlix</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#projects" class="w3-bar-item w3-button">Películas</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contacto</a>
+    </div>
+  </div>
+</div>
+
+<!-- First look -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src={{ url_for('static', filename='images/background-guason.jpg') }} alt="Architecture" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white">
+      <span class="w3-padding w3-black w3-opacity-min"><b>Bx</b></span>
+      <span class="w3-hide-small w3-text-light-grey">BitFlix</span></h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="background-wrapper w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Peliculas Seccion -->
+  <div class="w3-container header-padding" id="projects">
+    <h3 class="header-title w3-border-light-grey w3-padding-16 all-rows-header">Películas</h3>
+  </div>
+
+  <!-- First row -->
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-hover-shadow w3-display-container">
+        <div class="movie-tile-title w3-display-topleft w3-black w3-padding">{{ movies[0]['title'] }}</div>
+        <a href=/movies/{{movies[0].id}}><img src={{ "https://image.tmdb.org/t/p/w300" + movies[0]['poster'] }} class="w3-opacity w3-hover-opacity-off" alt="House" style="width:100%"></a>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <a href={{ movies[0]['imdb_link']}} target="_blank">
+                <img src={{ url_for('static', filename='images/imdbmini.png') }} class="w3-display-bottomleft" alt="imdb">
+              </a>
+            </div>
+            <div class="col-md-6">
+              <a href={{ movies[0]['magnet_link']}} target="_blank">
+                <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="imdb">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[1]['title'] }}</div>
+        <a href=/movies/{{movies[1].id}}><img src={{ "https://image.tmdb.org/t/p/w300" + movies[1]['poster'] }} class="w3-opacity w3-hover-opacity-off"  alt="House" style="width:100%"></a>
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[1]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[1]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[2]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[2]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[2]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[2]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[3]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[3]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[3]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[3]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Second Row-->
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="movie-tile-title w3-display-topleft w3-black w3-padding">{{ movies[4]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[4]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[4]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[4]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[5]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[5]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[5]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[5]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[6]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[6]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[6]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[6]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+     <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[7]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[7]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[7]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[7]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+  </div>
+  </div>
+
+  <!-- Third Row-->
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="movie-tile-title w3-display-topleft w3-black w3-padding">{{ movies[8]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[8]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[8]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[8]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[9]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[9]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[9]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[9]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[10]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[10]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[10]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[10]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[11]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[11]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[11]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[11]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fourth row -->
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="movie-tile-title w3-display-topleft w3-black w3-padding">{{ movies[12]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[12]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[12]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[12]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[13]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[13]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[13]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[13]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[14]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[14]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[14]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[14]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[15]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[15]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[15]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[15]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fifth row -->
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="movie-tile-title w3-display-topleft w3-black w3-padding">{{ movies[16]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[16]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[16]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[16]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[17]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[17]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[17]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[17]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[18]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[18]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[18]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[18]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="movie-tile w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding movie-tile-title">{{ movies[19]['title'] }}</div>
+        <img src={{ "https://image.tmdb.org/t/p/w300" + movies[19]['poster'] }} class="movie-tile-poster" alt="House" style="width:100%">
+        <div class="movie-tile-bottom-links w3-bottom">
+            <a href={{ movies[19]['imdb_link']}} target="_blank">
+              <img src={{ url_for('static', filename='images/imdb.png') }} class="w3-display-bottomleft" alt="imdb">
+            </a>
+            <a href={{ movies[19]['magnet_link']}}>
+              <img src={{ url_for('static', filename='images/magnet.png') }} class="w3-display-bottomright" alt="magnet">
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Contact Section -->
+  <div class="header-title w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contacto</h3>
+    <p>Si querés pedir alguna película. Este es el lugar ;)</p>
+    <form action="/action_page.php" target="_blank">
+      <input class="w3-input" type="text" placeholder="Nombre de la película" required name="Name">
+      <input class="w3-input w3-section" type="text" placeholder="Email de contacto" required name="Email">
+      <input class="w3-input w3-section" type="text" placeholder="Tu nombre" required name="Subject">
+      <input class="w3-input w3-section" type="text" placeholder="Comentario" required name="Comment">
+      <button class="w3-button w3-black w3-section" type="submit">
+        <i class="fa fa-paper-plane"></i> ENVIAR
+      </button>
+    </form>
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">Ambro17</a></p>
+</footer>
+
+
+
+</body>
+</html>
