@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-  <title>FlaskFlix</title>
+  <title>BitFlix - FRD</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet"  href="{{ url_for('static',filename='styles/basestyle.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static',filename='styles/style2.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/style7.css') }}">
   <body>
     <!-- Navbar (sit on top) -->
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
@@ -33,7 +33,7 @@
         <div class="row">
           <div class="col-sm-6 padded-text movie-desc">
             <h1 class="movie-title"><span>  {{   movie['title']   }}  </span></h1>
-            <p class="movie-synopsis">{{movie.overview}} -- POSTER</p>
+            <p class="movie-synopsis">{{movie.overview}}</p>
               <span><a href={{movie.imdb_link}} target="_blank">
                 <img src={{ url_for('static', filename='images/imdbmini.png') }} class="float-left" alt="imdb">
               </a></span>
